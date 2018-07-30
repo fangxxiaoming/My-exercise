@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = [1,'b','b',4,3,3,4,5,1];
+
+    //第一种
+    Array.prototype.unique1 = function(){
+        var arr1 = []; //定义一个新数组
+        for(var i=0;i<this.length;i++){
+            if(arr1.indexOf(this[i]) == -1){//判断目标数组中在原数组里是否存在
+                arr1.push(this[i]);
+            }
+        }
+        return arr1;
+    }
+    console.log(arr); //[1,'b','b',4,3,3,4,5,1]
+    console.log(arr.unique1()); //[1, "b", 4, 3, 5]
+    //这种方法的主要思路就是，新建一个数组，然后在原数组中，从第一个开始，看看新数组里面有没有这个元素，如果有，就忽略，然后进行下一个，如果没有，则把这个元素存到新数组里面，
+    //也就是说，每一次比较，都会遍历新数组，直到找到相同元素为止，比较耗性能
+//    如果大家不习惯这个写法，可以改成下面的写法，效果是一样的：
+
+
+    var arr = [1,'b','b',4,3,3,4,5,1];
+
+    Array.prototype.unique1=function(arr){
+        var arr1 = [];
+        for(var i=0;i<arr.length;i++){
+            if(this.indexOf(arr[i]) == i){//判断目标数组中在原数组里是否存在
+                arr1.push(arr[i]);
+            }
+        }
+        return arr1;
+    }
+    console.log(arr); //[1,'b','b',4,3,3,4,5,1]
+    console.log(arr.unique1()); //[1, "b", 4, 3, 5]
+
+    // var arr1 = [7, 7, 7, 8, 8, 8, 82, 82, 839, 49, 329, 8, 3, 3];
+    // var arr1_1 = arr1.filter(function(m, n) {
+    //     return arr1.indexOf(m) == n;
+    // });
+</script>
+</html>

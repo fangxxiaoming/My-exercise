@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="cvs" width="600" height="600"></canvas>
+<script>
+    var oCvs=document.querySelector('#cvs');
+    var aCvs=oCvs.getContext('2d');
+    aCvs.beginPath();
+    //秒针刻度
+    for(var i=0;i<60;i++){
+        aCvs.moveTo(300,300);
+        aCvs.arc(300,300,100,i*6*Math.PI/180,(i+1)*6*Math.PI/180);
+    }
+
+    aCvs.stroke();
+    // aCvs.closePath();
+    //盖一个圆
+    aCvs.beginPath();
+    aCvs.arc(300,300,95,0*Math.PI,2*Math.PI);
+    aCvs.fillStyle = "#fff";
+    aCvs.fill();
+    aCvs.closePath()
+    //时针刻度
+    aCvs.beginPath()
+    for(var j=0;j<12;j++){
+        aCvs.moveTo(300,300);
+        aCvs.arc(300,300,100,j*30*Math.PI/180,j*30*Math.PI/180);
+    }
+    aCvs.stroke();
+    aCvs.closePath();
+    //盖第二个圆
+    aCvs.beginPath();
+    aCvs.arc(300,300,90,0*Math.PI,2*Math.PI);
+    aCvs.fillStyle = "#fff";
+    aCvs.fill();
+    aCvs.closePath();
+    fun();
+    setInterval(function () {
+        fun()
+    },1000)
+    function fun() {
+        // aCvs.clearRect(245,245,110,110);
+        var oDate = new Date;
+        var iSeconds = oDate.getSeconds();
+        var iMinutes = oDate.getMinutes() + iSeconds/60;
+        var iHours = oDate.getHours() + iMinutes/60;
+        aCvs.beginPath();
+        aCvs.moveTo(300,300);
+        aCvs.arc(300,300,55,(iSeconds*6-90)*Math.PI/180,(iSeconds*6-90)*Math.PI/180);
+        aCvs.lineWidth = 2;
+        aCvs.strokeStyle = "#f00";
+        aCvs.stroke();
+        aCvs.closePath();
+        aCvs.beginPath();
+        aCvs.moveTo(300,300);
+        aCvs.arc(300,300,45,(iMinutes*6-90)*Math.PI/180,(iMinutes*6-90)*Math.PI/180);
+        aCvs.lineWidth = 4;
+        aCvs.strokeStyle = "#0f0";
+        aCvs.stroke();
+        aCvs.closePath();
+        aCvs.beginPath();
+        aCvs.moveTo(300,300);
+        aCvs.arc(300,300,35,(iHours*6-90)*Math.PI/180,(iHours*6-90)*Math.PI/180);
+        aCvs.lineWidth = 6;
+        aCvs.strokeStyle = "#000";
+        aCvs.stroke();
+        aCvs.closePath();
+    }
+
+</script>
+</body>
+</html>

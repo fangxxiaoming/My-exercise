@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12..js"></script>
+
+</head>
+<body>
+
+    您的爱好是：
+    <input type="checkbox" name="item" value="">篮球
+    <input type="checkbox" name="item" value="">足球
+    <input type="checkbox" name="item" value="">羽毛球
+    <input type="checkbox" name="item" value="">乒乓球
+    <button id="selectall">全选</button>
+    <button id="selectnone">全不选</button>
+    <button id="selectoppo">反选</button>
+
+<script>
+    $(function () {
+        $('#selectall').click(function () {
+            $(':checkbox').prop('checked',true)
+        })
+        $('#selectnone').click(function () {
+            $(':checkbox').prop('checked',false)
+        })
+        $('#selectoppo').click(function () {
+            $(':checkbox').each(function (index,ele) {
+                ele.checked=!ele.checked;
+            })
+        })
+    })
+
+</script>
+
+</body>
+</html>

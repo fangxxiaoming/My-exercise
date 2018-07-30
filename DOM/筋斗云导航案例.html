@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#ff0036;
+        }
+        #container{
+            margin:200px 200px;
+            position:relative;
+        }
+        ul{
+            width: 949px;
+            height: 50px;
+            background: #ffffff;
+            border-radius: 10px;
+
+        }
+        ul li{
+            list-style:none;
+            float:left;
+            /*margin-right:10px;*/
+            width: 83px;
+            height: 50px;
+            line-height: 50px;
+            text-align:center;
+            position:relative;
+
+        }
+        span{
+            position:absolute;
+            width:83px;
+            height: 40px;
+            left:0px;
+            top:5px;
+            opacity: 0.5;
+            background: url("img/cloud.gif");
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <span></span>
+<ul>
+    <li>首页新闻</li>
+    <li>活动策划</li>
+    <li>师资力量</li>
+    <li>企业文化</li>
+    <li>招聘信息</li>
+    <li>公司简介</li>
+    <li>上海校区</li>
+    <li>广东校区</li>
+</ul>
+</div>
+<script>
+    var contain=document.getElementById('container');
+    var aUl=contain.getElementsByTagName('ul')[0];
+    var aLi=contain.getElementsByTagName('li');
+    var aSpan=contain.getElementsByTagName('span')[0];
+var timer;
+
+    for(var i=0;i<aLi.length;i++) {
+        aLi[i].index = i;
+        var count = 0;
+
+        aLi[i].onmouseover = function () {
+           // clearInterval(timer);
+            var _this = this;
+            var step=(this.index*this.offsetWidth)/10;
+      timer = setInterval(function () {
+            step = step>0?Math.ceil(step):Math.floor(step);
+            aSpan.style.left=aSpan.offsetLeft+step+'px';
+
+
+          aSpan.style.left = _this.index*_this.offsetWidth+ "px";
+          clearInterval(timer);
+      }
+               if(Math.abs(_this.index*_this.offsetWidth- aSpan.offsetLeft)<=Math.abs(step)){
+
+            },30)
+
+        }
+//            animate(aSpan,this.index*this.offsetWidth);
+        }
+//        aLi[i].onmouseout = function () {
+//            animate(aSpan,count*this.offsetWidth)
+//        }
+//        aLi[i].onclick = function () {
+//            //需要一个计数器，每次点击以后把所以只记录下来
+//            //因为onmouseout事件要用到这个计数器，所以应该是一个全局变量
+//            count = this.index;
+//            animate(aSpan,count*this.offsetWidth);
+//        }
+//
+//    }
+//    function animate(ele,target) {
+//        clearInterval(timer);
+//
+//      timer=setInterval(function () {
+//          var step=(target-ele.offsetLeft)/10;
+//            step = step>0?Math.ceil(step):Math.floor(step);
+//            aSpan.style.left=ele.offsetLeft+step+'px';
+//
+//
+//               if(Math.abs(target- ele.offsetLeft)<Math.abs(step)){
+//                    aSpan.style.left = target+ "px";
+//                    clearInterval(timer);
+//                }
+//            },20)
+//
+//    }
+</script>
+</body>
+</html>

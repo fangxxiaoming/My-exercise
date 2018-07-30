@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距合并</title>
+    <style>
+        .box1{
+            width:200px;
+            height:200px;
+            margin-bottom:20px;
+            background: chartreuse;
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            margin-top:30px;
+            background:cornflowerblue;
+            /*相邻盒子外边据第一种*/
+            /*float:left;*/
+            /*相邻盒子外边据第二种*/
+            position: absolute;
+            /*父子盒子外边距第一种*/
+            /*border:1px solid transparent;*/
+            /*父子盒子外边距第二种*/
+            /*overflow: hidden;*/
+            /*父子盒子外边距第三种*/
+            /*float:left;*/
+            /*父子盒子外边距第四种*/
+            /*position: absolute;*/
+        }
+        .box3{
+            background: coral;
+            margin-top:30px;
+            /*父子盒子外边距第三种*/
+            /*float:left;*/
+            /*父子盒子外边距第四种*/
+            /*position: absolute;*/
+            /*父子盒子外边距第五种*/
+            /*padding*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+
+</div>
+<div class="box2">
+    <div class="box3">
+        子盒子
+    </div>
+</div>
+</body>
+</html>

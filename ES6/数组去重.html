@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // str='sljflsajflsjflksdfjlds';
+        // function find(str){
+        //     var obj={};
+        //     for(var i=0;i<str.length;i++){
+        //         if(obj[str.charAt(i)]){
+        //             obj[str.charAt(i)]++
+        //         }
+        //         else{
+        //             obj[str.charAt(i)]=1
+        //         }
+        //     }
+        //     var max=1;
+        //     var maxcode='';
+        //     for(var key in obj){
+        //         if(obj[key]>max){
+        //             max=n[key];
+        //             maxcode=key;
+        //         }
+        //     }
+        //     return maxcode
+        // }
+        // Array.prototype.init=function(){
+        //     var arr=[];
+        //     for(var i=0;i<this.length;i++)
+        //     if(arr.indexOf(this[i])==-1){
+        //         arr.push(this[i])
+        //     }
+        //     return arr
+        // }
+        Array.prototype.init=function(){
+            var arr=[];
+            for(var i=0;i<this.length;i++)
+            if(this.indexOf(this[i])==i){
+                arr.push(this[i])
+            }
+            return arr
+        }
+       console.log([2,1,1,21,2,154,12,1,2,1].init()) 
+        </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            overflow:hidden;
+        }
+        button{
+            float:left;
+            background:#8b8b8b;
+            width: 60px;
+            height: 40px;
+
+        }
+        p{
+            width: 400px;
+            height: 500px;
+        }
+        .sizefont{
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="bigger">放大</button>
+    <button id="smaller">缩小</button>
+</div>
+<p class="sizefont">
+    This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+    This is some text.This is some text. This is some text. This is some text. This is some text. This is some text.
+    This is some text.
+</p>
+<script src="jquery-1.12..js"></script>
+<script>
+    var thisEle=$('.sizefont').css('font-size');
+    var textFontSize = parseFloat(thisEle , 10);
+//    var unit = thisEle.slice(-2)
+    $('#bigger').click(function () {
+        textFontSize+=2;
+        $('.sizefont').css('font-size',textFontSize+'px')
+    })
+    $('#smaller').click(function () {
+        textFontSize-=2;
+        $('.sizefont').css('font-size',textFontSize+'px')
+    })
+//    var cName = $(this).attr("class");
+//    if(cName == "bigger"){
+//        textFontSize += 2;
+//    }else if(cName == "smaller"){
+//        textFontSize -= 2;
+//    }
+
+</script>
+</body>
+</html>

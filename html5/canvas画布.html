@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: #000;
+        }
+        #cvs{
+            background: #ffffff;
+            /*width: 600px;*/
+            /*height: 500px;*/
+        }
+    </style>
+</head>
+<body>
+<canvas id="cvs" width="600" height="600"></canvas>
+<script>
+    var oCvs=document.querySelector('#cvs');
+    var aCvs=oCvs.getContext('2d');
+    // aCvs.fillStyle='#fff';
+    oCvs.onmousedown=function (e) {
+        aCvs.moveTo(e.clientX,e.clientY);
+        oCvs.onmousemove=function (e) {
+            aCvs.lineTo(e.clientX,e.clientY);
+            aCvs.stroke()
+        }
+    }
+    oCvs.onmouseup=function () {
+        oCvs.onmousemove=null;
+    }
+</script>
+</body>
+</html>

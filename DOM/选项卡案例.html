@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .contain{
+            margin:0 auto;
+            height: 400px;
+            width: 800px;
+            background: rgba(168,165,136,0.6);
+        }
+        #btn-box{
+            height:30px;
+            width: 260px;
+            overflow: hidden;
+        }
+        #btn-box span{
+            float:left;
+            height: 30px;
+            width: 70px;
+            margin-right: 15px;
+            background: rgba(170,148,209,0.6);
+            text-align: center;
+            line-height:30px;
+        }
+
+       #btn-box .btn-act{
+            background:green;
+        }
+        #con-box div{
+            width: 400px;
+            height: 200px;
+            background: #00ff00;
+            display: none;
+            line-height:200px;
+            text-align:center;
+            font-size:25px;
+        }
+        #con-box .con-act{
+            background: #ff0036;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div id="btn-box">
+        <span class="btn-act">111</span>
+        <span>222</span>
+        <span>333</span>
+    </div>
+    <div id="con-box">
+        <div class="con-act">aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+    </div>
+</div>
+<script>
+    var obtn=document.getElementById("btn-box");
+    var abtn=obtn.getElementsByTagName("span");
+    var ocon=document.getElementById("con-box");
+    var acon=ocon.getElementsByTagName("div");
+
+    for(var i=0;i<abtn.length;i++){
+        abtn[i].index=i;
+        abtn[i].onclick=function () {
+            for(var j=0;j<abtn.length;j++){
+                abtn[j].className="";
+                acon[j].className="";
+            }
+            this.className="btn-act";
+            var index = this.index;
+            //找到和按钮对应的div  让当前的div显示
+            acon[index].className= "con-act";
+        }
+
+    }
+</script>
+</body>
+</html>

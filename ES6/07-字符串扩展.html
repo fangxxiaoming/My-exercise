@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    trdtrd
+    <script>
+//       var a=3;
+//       console.log(`adfdsklljljlkj${a}dfdf`)  
+// //方法加到类的原型下，能被所有实例化对象获取
+// var str='hello world'
+//       String.prototype.sw=function sw(str){
+    
+//           if(this.indexof(str)==0){
+//               return true;
+//           }
+//           else {
+//               return false
+//           }
+//       }
+//       console.log(str.sw('hell'))
+//       String.prototype.ew=function(){
+//           if(this.lastIndexof(str)+str.length==this.length){
+//               return true;
+//           }
+//           return false
+//       }
+    var string='alfjsalflksajflallkaaaaaaa';
+    function find(str){
+        var n={};
+        for(var i=0;i<str.length;i++){
+            str1=str.charAt(i)
+            if(n[str1]){
+                n[str1]++
+            }
+            else{
+                n[str1]=1
+            }
+
+        }
+        var max=1;
+        var maxcode='';
+        for(var key in n){
+            if(n[key]>max){
+                max=n[key];
+                maxcode=key;
+            }
+        }
+        return maxcode;
+    }
+    console.log(find(string));
+    //验证是否是数组
+    function isArray(obj) {
+        //toString()方法被每个Object对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"
+        //，其中type是对象的类型
+    console.log(Object.prototype.toString.call(obj))
+    return Object.prototype.toString.call(obj) == '[object Array]'
+}
+    var arr2=[1,2,12,13];
+    console.log(isArray(arr2))
+        </script>
+</body>
+</html>

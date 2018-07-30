@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        fieldset{
+            min-width: 100px;
+            max-width:400px;
+            margin:0 auto;
+        }
+        input{
+            width: 400px;
+            height: 30px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>表单元素</legend>
+    <label>
+        用户名：<input type="text" name="userName" />
+    </label>
+
+    <label>
+        密码：<input type="password" name="pwd" />
+    </label>
+    <label >
+        性别：<input type="text" name="sex" list="sex" />
+    </label>
+
+    <!-- 定义数据列表-->
+    <datalist id="sex">
+        <option >男</option>
+        <option >女</option>
+        <option >不祥</option>
+    </datalist>
+    <label for="">
+        推荐人： <output>春哥</output>
+    </label> <br>
+    <label for="">
+        加密类型:  <keygen/>
+
+    </label> <br>
+    <label for="#">
+        度量器： <meter value="50" max="100" min="0" low="30" high="80"></meter>
+    </label>
+    <label for="">
+        进度条:    <progress value="40" min="0" max="100"></progress>
+    </label>
+
+</fieldset>
+</body>
+</html>

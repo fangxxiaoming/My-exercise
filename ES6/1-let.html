@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    bb()
+    var bb=function(){
+        console.log(111)
+    }
+    // let不会进行变量提升
+    console.log(cc)
+    let cc=1111;
+    var dd=10;
+    function fn(){
+        console.log(dd)
+        var dd=20;//undefined
+    }
+    //let 不能重复声明
+    // let ee=5;
+    let ee=6;
+    //暂时性死区（临时失效区），不允许同名变量进入作用域
+    let b =10;
+    function ff(){
+        console.log(b)
+        let b=20
+    }
+//不允许重复声明。不允许在相同作用域内，重复声明同一个变量。因此，
+//不能在函数内部重新声明参数
+//let块级作用域（{}包裹），在外部不能引用
+for(let i=0;i<4;i++){
+    console.log(i)
+}
+console.log(i)
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1">
+
+</div>
+<button id="btn">click</button>
+<ul>
+    <li>11</li>
+    <li>22</li>
+</ul>
+<script src="jquery-1.12..js"></script>
+<script>
+//    $('#div1').click(function () {
+//        alert('haha')
+//    })
+//    $('#btn').click(function () {
+//        $('#div1').off('click',function () {
+//
+//        })
+//    })
+//$('li').click(function () {
+//    console.log($(this).html());
+//})后生成的元素不能直接绑定事件，用事件委托，给父元素绑定事件
+$('ul').on(('click'),'li',function () {
+    console.log($(this).text())
+})
+    $('#btn').click(function () {
+        $('ul').append('<li>'+Math.random()+'</li>')
+    })
+</script>
+</body>
+</html>

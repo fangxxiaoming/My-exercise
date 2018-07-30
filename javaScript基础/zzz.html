@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var sum=0;
+//    var arr=[];
+//    function fn() {
+//        for(var i=1;i<8;i++){
+//            var a=prompt("请输入"+i+"门成绩");
+//            a=Number(a);
+//            sum+=a;
+//            arr.push(a);
+//            if(!a){
+//                break;
+//            }
+//
+//        }
+//        return sum;
+//    }
+//    fn();
+//    console.log(arr);
+//    document.write("总分:"+sum+"<br>"+"平均分"+sum/7);
+//var result="";
+//    function CollectDigits(s) {
+//        for(var i=0;i<=s.length;i++){
+//            if(s.charAt(i)>0&&s.charAt(i)<=9){
+//                result+=s.charAt(i);
+//            }
+//        }
+//        return result
+//    }
+//    console.log(CollectDigits("a12df2e4g58e9"));
+
+var str="";
+    function merge(s1,s2) {
+
+        var maxlength=Math.max(s1.length,s2.length);
+        for(var i=0;i<maxlength;i++){
+            if(i<s1.length){
+                str+=s1.charAt(i);
+            }
+            if(i<s2.length){
+                str+=s2.charAt(i);
+            }
+        }
+        return str
+
+    }
+console.log(merge("abcdef","12345"));
+
+</script>
+</body>
+</html>

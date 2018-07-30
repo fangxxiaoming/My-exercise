@@ -1,0 +1,57 @@
+<script>
+    define(function ($) {
+        function carsel() {
+            this.container = $('<div class="container"></div>');
+            this.prev = $('<span class="prev">&lt;</span>');
+            this.next = $('<span class="next">&gt;</span>');
+            this.tab = $('<ul class="tab"></ul>');
+            this.iNow=0;
+
+        }
+        carsel.prototype.int=function (option) {
+            var defalut = {
+                arrowPos:'buttom',//center
+                btnType:'square'// circle
+            };
+            var _this = this;
+            option=$.extend(defalut,option);
+            for(var i=0;i<option.imgData.length;i++){
+                _this.tab.append(`<li class="${i==0?'selected tab-'+option.btnType:'tab'+option.btnType}">`);
+                _this.container.append(`<img class="${ i==0?'selected':''}" src='${option.imgData[i]}'>`);
+                $(this.container).append(this.prev).append(this.next).append(this.tab);
+                $(option.selector).append(this.container);
+                this.prev.addClass('prev-'+option.arrowPos);
+                this.next.addClass('next-'+option.arrowPos);
+            }
+            $('li',_this.tab).on('click',function () {
+               _this.iNow= $(this.index());
+                changeImg($(this).index());
+            });
+            function changeImg(index) {
+                $('li',_this.tab).eq(index).addClass('selected').siblings().removeClass('selected');
+                $('img',_this.container).eq(index).addClass('selected').siblings().removeClass('selected');
+            }
+
+            _this.prev.on('click',function () {
+                iNow--;
+                if(iNow==-1){
+                    iNow=option.imgData.length-1;
+                    changeImg(iNow)
+                };
+                function start() {
+                    _this.timer=setInterval(function () {
+                        _this.next.trigger('click');
+                    },2000)
+                    start();
+                    _this.container.hover(function () {
+                        clearInterval(_this.timer)
+                    },function () {
+                        start()
+                    })
+
+
+                }
+            })
+        }
+    })
+</script>

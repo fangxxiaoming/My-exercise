@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>点击下面的按钮，只要i<5一直循环代码块</p>
+<button onclick="myFunction()">点击按钮</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x="";
+        var i=0;
+        while(i<5){
+            x=x+"The number is"+i+"<br>";
+            i++;
+        }
+        document.getElementById("demo").innerHTML=x;
+    }
+</script>
+</body>
+</html>

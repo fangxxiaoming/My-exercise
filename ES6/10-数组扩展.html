@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var aLi=document.querySelectorAll('li')
+        console.log(aLi);
+        var arr=[...aLi];
+        var arr2=Array.from(aLi)
+        var arr=new Array(4);//4个空var元素
+        var arr1=Array.of(4);
+        console.log(arr1)//[4]
+        var result=arr.find(function(val,index,arr){
+           return  val>4;
+        });
+        var arr=[1,2,3,4,5,6,7];
+        var arr=(new Array(5).fill('a'))
+        console.log(arr)
+        var arr1=['a','b','c','d','f'];
+        for(a of arr1){
+            console.log(a)
+        }
+        for(a of arr1.keys()){
+            console.log(a)
+        }
+        for([key,val]of arr1.entries()){
+            console.log(key,val)
+        }
+        arr1.forEach(function(val,index,arr){
+                console.log(val,index)
+        })
+        arr1.filter(function(){
+            return index>3;
+        })
+        </script>
+</body>
+</html>

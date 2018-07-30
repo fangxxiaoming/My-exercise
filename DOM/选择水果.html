@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+           background-color: #55a532;
+            width: 100px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<select name=""; size=10; id="sel1" multiple>
+    <option value="0">苹果</option>
+    <option value="1">香蕉</option>
+    <option value="2">榴莲</option>
+    <option value="3">葡萄</option>
+    <option value="4">橘子</option>
+</select>
+<input type="button" value=">>>">
+<input type="button" value="<<<">
+<input type="button" value="<">
+<input type="button" value=">">
+<select name=""; size=10; id="sel2" multiple>
+</select>
+
+<script>
+        var sele1=document.getElementById("sel1");
+        var sele2=document.getElementById("sel2");
+        var butarr=document.getElementsByTagName("input");
+        butarr[0].onclick=function () {
+            var arr=sele1.children;
+            for(var i=arr.length-1;i>=0;i--){
+                sele2.appendChild(arr[0]);
+            }
+        };
+        butarr[1].onclick = function () {
+            //2.获取子元素，整体的添加到另外一边的标签中
+            var arr = sele2.children;
+            //循环遍历放入另一侧的select标签中
+            for(var i=arr.length-1;i>=0;i--){
+                //放入sel2中，不能用push，要用appendChild;
+                sele1.appendChild(arr[0]);
+            }
+        }
+        //需求2：点击>和<两个按钮，所有被选定的子元素都跑到对方的标签中。
+        //思路：获取所有子节点，然后循环判断，只有selected属性值为true的选项才能被添加到右侧的select标签中
+        butarr[2].onclick = function () {
+            //获取所有子节点
+            var arr = sele1.children;
+            //遍历判断数组中的元素selected属性为true的，添加到相反的select标签中
+            for(var i=arr.length-1;i>=0;i--){
+                if(arr[i].selected === true){
+//                    arr[i].selected = false;
+                    sele2.appendChild(arr[i]);
+                }
+            }
+        }
+
+        butarr[3].onclick = function () {
+            //获取所有子节点
+            var arr = sele2.children;
+            //遍历判断数组中的元素selected属性为true的，添加到相反的select标签中
+            for(var i=arr.length-1;i>=0;i--){
+                if(arr[i].selected === true){
+//                    arr[i].selected = false;
+                    sele1.appendChild(arr[i]);
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

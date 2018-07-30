@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>点击这个按钮，测试带有break的循环语句</p>
+<button onclick="myfunction()">点击按钮</button>
+<p id="demo"></p>
+<script>
+    function myfunction() {
+        var x="";
+        for(var i=0;i<10;i++){
+            if(i==3){
+                break;
+            }
+        x=x+"the number is"+i+"<br>";
+        }
+        document.getElementById("demo").innerHTML=x;
+    }
+</script>
+</body>
+</html>

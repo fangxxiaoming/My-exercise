@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"/>
+
+<button id="btn">click</button>
+<script src="jquery-1.12..js"></script>
+<script>
+    $('input').on('focus',function () {
+        $('input').css('background','grey')
+    }).on('blur',function () {
+        $('input').css('background','#fff')
+    })
+    $('#btn').on('click',function () {
+        $('input').trigger('focus');
+    })
+    </script>
+</body>
+</html>

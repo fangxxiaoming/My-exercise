@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x=Math.random();
+    var y=Math.random();
+    console.log(x);
+    console.log(y);
+    console.log(x>y?x:x=y);
+
+    var today=new Date();
+    var year=today.getFullYear();
+    function isRn() {
+        if (year%4==0 &&year%100!= 0 || year % 400 == 0) {
+            console.log(year +"年是闰年")
+        }
+        else {
+            console.log(year+"不是闰年");
+        }
+    }
+    isRn();
+//        for(var i=100;i<1000;i++){
+//            if(i%4==2&&i%7==3&&i%9==5){
+//                console.log(i);
+//            }
+//
+//        }
+
+//    var a=prompt("请输入0-6");
+//    var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+//   a=arr[a];
+//   alert(a);
+//   var sum=1;
+//for(var j=1;j<=10;j++){
+//    sum*=j;
+//}
+//console.log(sum);
+//    5.	在页面上输出如下数字图案。
+//    1
+//    1 2
+//    1 2 3
+//    1 2 3 4
+//    1 2 3 4 5
+//    其中，每行的数字之间有一个空格间隔。
+//    for(j=1;j<=5;j++){
+//        for(i=1;i<=j;i++){
+//            document.write(i+"&nbsp;&nbsp;");
+//        }
+//        document.write("<br>")
+//    }
+//    for(j=1;j<=5;j++){
+//for(k=1;k<=5-j;k++){
+//    document.write("&nbsp;")
+//}
+//        for(i=1;i<=j;i++){
+//            document.write("&nbsp;")
+//            document.write("☆");
+//        }
+//
+//        document.write("<br>")
+//    }
+//    8.	求所有满足条件的四位数ABCD，它是13的倍数，且第3位数加上第2位数等于第
+//    	4位数（即：A=B+C）。（提示：对于四位数的整数x，通过Math.floor(x/1000)
+//    	可求出第4位的数字，其他位数的提取也类似）
+  for(var i=1000;i<10000;i++){
+      if (i % 13 == 0 && (Math.floor(i %1000/ 100)) + (Math.floor(i %100/ 10)) == (Math.floor(i / 1000))) {
+          console.log(i);
+      }
+  }
+
+
+//    1.	编写程序．通过用户输入的年龄判断是哪个年龄段的人
+//    （儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60），
+//    并在页面上输出判断结果。
+//    var age=prompt("请输入年龄");
+//    if(age<14){
+//        alert("儿童");
+//    }
+//    if(age>=14&&age<24){
+//        alert("青少年");
+//    }
+//    if(age>=24&&age<40){
+//        alert("青年");
+//    }
+//    if(age>=40&&age<60){
+//        alert("中年");
+//    }
+//    if(age>=60){
+//        alert("老年");
+//    }
+//var sum=1;
+//var summ=0;
+//    for(j=1;j<=10;j++){
+//            for(i=1;i<=j;i++){
+//                sum*=i;
+//            }
+//           summ+=sum;
+//        }
+//        console.log(summ);
+</script>
+</body>
+</html>

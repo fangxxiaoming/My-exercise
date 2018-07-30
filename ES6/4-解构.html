@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+//   let arr=[1,2,3];
+//   let[a,b,c]=arr;
+//   console.log(a,b,c);
+// let obj={
+//     name:"zs",
+//     age:20
+// }
+// let{name,age}=obj;
+// console.log(name,age);
+// let{name:aa,age:bb}=obj;
+// console.log(aa,bb);
+// function aa([x,y,z]){
+//     console.log(x,y,z)
+// }
+// let arr=['a','b','c']
+// aa(arr)
+// function bb(){
+//     let arr=[1,2,3]
+//     return arr
+// }
+// let [a,b,c]=bb();
+// function cc({name,age}){
+//     console.log(name,age)
+// }
+// var person={
+//     name:'zs',
+//     age:10
+// }
+// cc(person)
+let a=5;
+let b=6;
+let temp;
+//1.用中间变量交换
+// temp=a;
+// a=b;
+// b=temp;
+//2.自身交换
+// a=a+b;
+// b=a-b;
+// a=a-b
+//3.数组交换
+// [a,b]=[b,a]
+b=[a,a=b][0];
+
+arr=[a,b].reverse()
+console.log(arr)
+var str='{"name":"zhangsan","age":25}'
+var {name,age}=JSON.parse(str);
+console.log(name,age)
+  </script>  
+</body>
+</html>

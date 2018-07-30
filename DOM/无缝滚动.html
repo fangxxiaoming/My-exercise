@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            margin:50px auto;
+            border:1px solid black;
+            width: 400px;
+            height: 200px;
+            overflow:hidden;
+            position:relative;
+
+        }
+        ul{
+            width: 520px;
+            /*overflow:hidden;*/
+           position:absolute;
+            left:0;
+
+        }
+        li{
+            width: 120px;
+            height: 120px;
+            background: #ff0036;
+            float:left;
+            margin-right:10px;
+            text-align:center;
+            line-height:120px;
+            font-size:40px;
+            color:#fff;
+            list-style:none;
+        }
+        #btn{
+            margin:135px auto 0;
+            width: 210px;
+        }
+        #btn span{
+            display:inline-block;
+            width: 100px;
+            height: 50px;
+            background: rgba(131,219,130,0.6);
+            color:#fff;
+            text-align:center;
+            line-height:50px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+        <ul id="img-box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    <div id="btn">
+        <span id="left">向左</span>
+        <span id="right">向右</span>
+    </div>
+
+</div>
+<script>
+    var oimg=document.getElementById("img-box");
+    var oleft=document.getElementById("left");
+    var oright=document.getElementById("right");
+    oimg.innerHTML+=oimg.innerHTML;
+    oimg.style.width=oimg.offsetWidth*2+"px";
+    var speed=3
+   var timer= setInterval(function () {
+       if(oimg.offsetLeft<=-oimg.offsetWidth/2){
+           oimg.style.left=0;
+       }
+        oimg.style.left=oimg.offsetLeft-3+"px"
+    },100)
+    oright.onmouseover=function () {
+        clearInterval(timer);
+        setInterval(function () {
+            if(oimg.offsetLeft>0){
+                oimg.style.left=-oimg.offsetWidth/2+"px"
+            }
+            oimg.style.left=oimg.offsetLeft+3+"px";
+        },20)
+
+    };
+//    function run() {
+//        timer= setInterval(function () {
+//       if(oimg.offsetLeft<=-oimg.offsetWidth/2){
+//           oimg.style.left=0;
+//       }
+//            if(oimg.offsetLeft>0){
+//                oimg.style.left=-oimg.style.offsetWidth/2+"px"
+//            }
+//        oimg.style.left=oimg.offsetLeft+speed+"px"
+//    },100);
+//    }
+//    run()
+//    oright.onmouseover=function () {
+//        speed=3;
+//    }
+//    oleft.onmouseover=function () {
+//        speed=-3;
+//    }
+</script>
+</body>
+</html>

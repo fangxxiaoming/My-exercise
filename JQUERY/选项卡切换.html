@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            overflow: hidden;
+        }
+        ul li{
+            list-style: none;
+            float:left;
+            width: 50px;
+            /*height: 50px;*/
+            background:green;
+        }
+        .selected{
+            background: yellow;
+        }
+        #container{
+            overflow:hidden;
+            height: 300px;
+            width: 200px;
+        }
+       div{
+            display: none;
+            height: 300px;
+            width: 200px;
+            background: #ff0036;
+        }
+        .show{
+            display:block;
+        }
+    </style>
+    <script src="jquery-1.12..js"></script>
+</head>
+<body>
+<ul>
+    <li >标签1</li>
+    <li>标签2</li>
+    <li>标签3</li>
+</ul>
+<div class="content">
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+
+<script>
+    $('li').mouseover(function () {
+//        $(this).css("background-color","#777").css("border","1px solid #777");
+//        //设置其他li的背景颜色和边框
+//        $("li").not(this).css("background-color","#aaa").css("border","1px solid white");
+//        //获得当前li的索引值
+//        var index = $('li').index(this);
+//        //隐藏所有的div
+//        $("div").hide();
+//        //显示对应的div
+//        $("div").eq(index).show();
+        $('.content div').eq($(this).index()).show.siblings().hide();
+//        或者用addclass 和removeclass
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+            background: url('img/bg.jpg')  ;
+        }
+        #container  .img{
+            width: 125px;
+            height: 125px;
+            border:5px solid #fff;
+            position:absolute;
+            /*animation: fun 2s;*/
+            -webkit-transition: all 1.5s ease;
+            left:-150px;
+            top:-150px;
+        }
+        #container  .img span{
+            width: 125px;
+            height: 125px;
+            border:1px solid #fff;
+            display:block;
+            opacity: 0;
+            -webkit-transition: all 0s ease;
+        }
+        .prev,.next{
+            position:absolute;
+            display:none;
+            width: 50px;
+            height: 100px;
+
+        }
+        .prev{
+            left:0;
+            top:30%;
+            background:#fff url("img/prev.png") center center no-repeat;
+            border-radius:0 10px 10px 0;
+        }
+        .next{
+            right:0;
+            top:30%;
+            background:#fff url("img/next.png")center center no-repeat;
+            border-radius:10px 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+</div>
+<div class="prev"></div>
+<div class="next"></div>
+
+<script>
+    var oContainer = document.getElementById('container');
+    var oPrev=document.getElementsByClassName('prev')[0];
+    var oNext=document.getElementsByClassName('next')[0];
+    var count = 0;
+    for(var i=0; i<24; i++){
+        var oImg = new Image();
+        oImg.onload = function(){
+            count++;
+            if(count == 48){
+                loadSuccess();
+            }
+        };
+        oImg.src = 'img/thumbs/'+(i+1)+'.jpg';
+    }
+    for(var i=0; i<24; i++){
+        var oImg = new Image();
+        oImg.onload = function(){
+            count++;
+            if(count == 48){
+                loadSuccess();
+            }
+        };
+        oImg.src = 'img/'+(i+1)+'.jpg';
+    }
+    var index = 0;
+    function loadSuccess() {
+        for (var i = 0; i < 4; i++) { //行
+            for (j = 0; j < 6; j++) {  //列
+                index++;
+                var oDiv = document.createElement('div');
+                oDiv.className = 'img';
+                oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';
+                oContainer.appendChild(oDiv);
+                var conWidth = oContainer.offsetWidth;
+                var aLeft = (conWidth - oDiv.offsetWidth * 6) / 7;
+                oDiv.rowCol = {
+                    row: i,
+                    col: j
+                };
+                oDiv.idx = index;
+                oDiv.innerHTML = "<span></span>";
+                oDiv.onclick = fn;
+//                oDiv.style.transitionDelay=(23-i)*100+'ms';
+//                oDiv.style.left=oDiv.offsetWidth*j+aLeft*(j+1)+'px';
+            }
+        }
+
+//        var aDiv=oContainer.getElementsByTagName('div');
+//        for(var i=0;i<aDiv.length;i++){
+//            aDiv[i].style.transitionDelay=(23-i)*100+'ms';
+
+//            aDiv[i].style.left=135*aDiv.rowCol.col+aLeft*(aDiv.rowCol.row+1)+'px';
+//            aDiv[i].style.top=135*aDiv.rowCol.row+aLeft*i/2+'px'
+//        }
+        var spaceX = (oContainer.offsetWidth - 135 * 6) / 7;
+        var spaceY = (oContainer.offsetHeight - 135 * 4) / 5;
+        var aDiv = oContainer.getElementsByTagName('div');
+        //循环24个div 设置left  top
+        for (i = 0; i < aDiv.length; i++) {
+            aDiv[i].style.transitionDelay = (23 - i) * 100 + "ms";
+            aDiv[i].style.left = aDiv[i].rowCol.col * (spaceX + 135) + spaceX + "px";
+            aDiv[i].style.top = aDiv[i].rowCol.row * (spaceY + 135) + spaceY + "px";
+            aDiv[i].style.transform='rotate('+(Math.random()-0.5)*40+'deg)'
+        }
+        var iLeft = (oContainer.offsetWidth - 127 * 6) / 2;
+        var iTop = (oContainer.offsetHeight - 127 * 6) / 2;
+    //        console.log(iLeft);
+    //        console.log(iTop);
+        var flag = true;
+        function fn() {
+                var oDiv = aDiv[i];
+                if (flag) {
+                    for (var i = 0; i < aDiv.length; i++) {
+                    aDiv[i].style.transitionDelay = "0ms";
+                    aDiv[i].style.left = iLeft + 127 * aDiv[i].rowCol.col + "px";
+                    aDiv[i].style.top = aDiv[i].rowCol.row * 127 + iTop + "px";
+                    aDiv[i].style.border = '1px solid #fff';
+                    aDiv[i].style.WebkitTransform = 'rotate(0deg)';
+                    var oSpan = aDiv[i].getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 1;
+                    var x = -aDiv[i].rowCol.col * 125;
+                    var y = -aDiv[i].rowCol.row * 125;
+                    oSpan.style.background = 'url(img/' + (this.idx) + '.jpg) ' + x + 'px ' + y + 'px no-repeat';
+
+                }
+                    oPrev.style.display = 'block';
+                    oNext.style.display = 'block';
+            }
+
+        else {
+                    for (var i = 0; i < aDiv.length; i++) {
+                        var oDiv = aDiv[i];
+                        oDiv.style.left = oDiv.rowCol.col * (spaceX + 135) + spaceX + "px";
+                        oDiv.style.top = oDiv.rowCol.row * (spaceY + 135) + spaceY + "px";
+                        oDiv.style.WebkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
+                        oDiv.style.border = '5px solid #fff';
+                        var oSpan = oDiv.getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 0;
+                    }
+                  oPrev.style.display = 'none';
+                    oNext.style.display = 'none';
+
+                }
+            flag = !flag;
+        }
+        oNext.onclick=function () {
+            
+        }
+
+    }
+
+</script>
+</body>
+</html>

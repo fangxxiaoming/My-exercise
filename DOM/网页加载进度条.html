@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .loading{
+            width: 100% ;
+            height: 100%;
+            position: fixed;
+            z-index:3;
+            top:0;
+            left:0;
+            background:#337ab7;
+        }
+        .pic{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin:auto;
+        }
+        .pic i{
+            display: block;
+            float:left;
+            width: 6px;
+            height: 50px;
+            background: #339999;
+            margin:0 2px;
+            transform:scaleY(0.4);
+            animation:load 1.2s infinite;
+        }
+        @keyframes load {
+            0%,40%,100%{
+                transform:scaleY(0.4);
+            }
+            20%{
+                transform:scaleY(1);
+            }
+        }
+        .pic i:nth-child(2){
+            animation-delay:0.1s ;
+        }
+        .pic i:nth-child(3){
+            animation-delay:0.2s ;
+        }
+        .pic i:nth-child(4){
+            animation-delay:0.3s ;
+        }
+        .pic i:nth-child(5){
+            animation-delay:0.4s ;
+        }
+    </style>
+</head>
+<body>
+<div class="loading">
+    <div class="pic">
+        <!--<img src="img/timg.gif" alt="">-->
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+</div>
+<div>
+    <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=af4e3314b88f8c54fcd3c32f0a282dee/c9fcc3cec3fdfc03925a1642d83f8794a4c2262d.jpg" alt="">
+    <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=af4e3314b88f8c54fcd3c32f0a282dee/c9fcc3cec3fdfc03925a1642d83f8794a4c2262d.jpg" alt="">
+    <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=af4e3314b88f8c54fcd3c32f0a282dee/c9fcc3cec3fdfc03925a1642d83f8794a4c2262d.jpg" alt="">
+    <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=45252389291f95cab9f594b6f9167fc5/72f082025aafa40f99d4e82aa764034f78f01932.jpg" alt="">
+    <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=45252389291f95cab9f594b6f9167fc5/72f082025aafa40f99d4e82aa764034f78f01932.jpg" alt="">
+    <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=45252389291f95cab9f594b6f9167fc5/72f082025aafa40f99d4e82aa764034f78f01932.jpg" alt="">
+    <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=d31d7aca77f40ad10ae4c1e3672d1151/d439b6003af33a8730364de8ca5c10385243b5ed.jpg" alt="">
+    <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=d31d7aca77f40ad10ae4c1e3672d1151/d439b6003af33a8730364de8ca5c10385243b5ed.jpg" alt="">
+    <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=d31d7aca77f40ad10ae4c1e3672d1151/d439b6003af33a8730364de8ca5c10385243b5ed.jpg" alt="">
+    <img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=61c889fe00d79123ffe092749d355917/48540923dd54564e39103dcfbfde9c82d0584fcb.jpg" alt="">
+    <img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=61c889fe00d79123ffe092749d355917/48540923dd54564e39103dcfbfde9c82d0584fcb.jpg" alt="">
+    <img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=61c889fe00d79123ffe092749d355917/48540923dd54564e39103dcfbfde9c82d0584fcb.jpg" alt="">
+    <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=2610b317bf1c8701c9b6b4e6177e9e6e/0d338744ebf81a4c596ce13adb2a6059242da6e2.jpg" alt="">
+    <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=2610b317bf1c8701c9b6b4e6177e9e6e/0d338744ebf81a4c596ce13adb2a6059242da6e2.jpg" alt="">
+    <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=2610b317bf1c8701c9b6b4e6177e9e6e/0d338744ebf81a4c596ce13adb2a6059242da6e2.jpg" alt="">
+    <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=4d11b8949422720e64cee4fa4bc90a3a/4a36acaf2edda3cc383fa5d60de93901203f9268.jpg" alt="">
+    <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=4d11b8949422720e64cee4fa4bc90a3a/4a36acaf2edda3cc383fa5d60de93901203f9268.jpg" alt="">
+    <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=4d11b8949422720e64cee4fa4bc90a3a/4a36acaf2edda3cc383fa5d60de93901203f9268.jpg" alt="">
+    <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=a04ba5c277f40ad10ae4c1e3672d1151/d439b6003af33a87436092e0ca5c10385343b53f.jpg" alt="">
+    <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=a04ba5c277f40ad10ae4c1e3672d1151/d439b6003af33a87436092e0ca5c10385343b53f.jpg" alt="">
+    <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=a04ba5c277f40ad10ae4c1e3672d1151/d439b6003af33a87436092e0ca5c10385343b53f.jpg" alt="">
+</div>
+<script>
+    //一种是用定时器
+    var oL=document.getElementsByClassName('loading')[0];
+    setInterval(function () {
+        oL.style.display='none';
+    },3000)
+    //一种判断服务器返回的状态
+    // document.onreadystatechange=function () {
+    //     if(document.readyState=='complete'){
+    //         // oL.style.display='none';
+    //     }
+    // }
+</script>
+</body>
+</html>

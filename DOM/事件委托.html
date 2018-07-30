@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>01</li>
+    <li>02</li>
+</ul>
+<button id="btn">点击</button>
+<script>
+    var ali=document.getElementsByTagName('li');
+    var obtn=document.getElementById('btn');
+    var oul=document.getElementsByTagName('ul')[0];
+//    后生成的元素不能直接innerHTML
+        for(var i=0;i<ali.length;i++){
+        ali[i].onclick=function () {
+            console.log(this.innerHTML);
+        }
+    };
+    oul.onclick=function (e) {
+        e=e||window.event;
+        var target=e.target||e.srcElement;
+        if(target.tagName=='LI'){
+            console.log(target.innerHTML);
+        }
+        console.log(e.target)
+    }
+    obtn.onclick=function () {
+        var oli=document.createElement('li');
+        oli.innerHTML=Math.random();
+        oul.appendChild(oli);
+    }
+</script>
+</body>
+</html>

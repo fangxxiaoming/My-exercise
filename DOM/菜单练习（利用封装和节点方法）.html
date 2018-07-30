@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            list-style:none;
+            float:left;
+            width: 50px;
+            height: 30px;
+            margin-right:5px;
+            background-color:beige;
+            text-align:center;
+            line-height:30px;
+        }
+        ul li a{
+            text-decoration: none;
+
+        }
+        .current{
+            background-color: burlywood;
+
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li class="current"><a href="#">首页</a></li>
+    <li><a href="#">博客</a></li>
+    <li><a href="#">播客</a></li>
+    <li><a href="#">相册</a></li>
+    <li><a href="#">关于</a></li>
+    <li><a href="#">帮助</a></li>
+</ul>
+<script src="Nodetools.js"></script>
+<script>
+    var alist=getele("list");
+    var arr=alist.getElementsByTagName("a");
+    for(var i=0;i<arr.length;i++){
+        arr[i].onclick=function () {
+
+            var otherarr=getAllsiblingnode(this.parentNode);
+            for(var j=0;j<otherarr.length;j++){
+             otherarr[j].className="";
+            }
+            this.parentNode.className="current";
+        }
+    }
+//    var ali=alist.children;
+//    for(var i=0;i<ali.length;i++){
+//        var a=getFirstchild(ali[i]);
+//        ali.onclick=function () {
+//           for(var j=0;j<ali.length;j++){
+//               ali[j].className="";
+//           }
+//           this.parentNode.className="current";
+//        }
+//    }
+</script>
+</body>
+</html>

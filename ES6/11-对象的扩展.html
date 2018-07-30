@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let name='zs';
+    // let obj={
+    //     name:name,
+    //     age:20
+    // }
+    let obj={
+        name,
+        age,
+        say(){
+            console.log('haha')
+        }
+    }
+    console.log(obj);
+    obj.say();
+    var a='name';
+    obj2={
+        [a]:'zs'//取可变的属性用[]
+    }
+    console.log(-0===+0);
+    console.log(Object.is(-0,+0));
+    console.log(NaN===NaN);
+    console.log(Object.is(NaN,NaN));
+    obj={
+        name:"zs",
+        age:20
+    };
+    obj1={
+        name:"ls",
+        school:'wc'
+    }
+    console.log($.extend(obj,obj1));
+    console.log({...obj,...obj1});
+    console.log(Object.assign(obj,obj1));
+    console.log('name'in obj);
+    
+    </script> 
+</body>
+</html>

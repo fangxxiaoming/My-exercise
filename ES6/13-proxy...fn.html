@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let fn=function(a){
+    //     console.log('fn........')
+    // };
+    // var pro=new Proxy(fn,{
+    //     apply(){
+    //         console.log('apply...调用');
+    //         Reflect.apply(...arguments)
+    //         console.log(arguments)
+    //     }
+    // })
+    // pro(1,2);
+    // function text(a,b){
+    //     console.log(a+b)
+    //     console.log(arguments)
+    // }
+    // text(3,5);
+    let fn= function(a){
+        console.log('fn............')
+    }
+    let pro=new Proxy(fn,{
+        apply(){
+            console.log('appl....调用')
+            Reflect.apply(...arguments)
+            console.log(arguments)
+        }
+    })
+    pro(1)
+    </script>
+</body>
+</html>

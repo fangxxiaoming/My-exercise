@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //const a=10; 定义个常量，基本数据类型不能修改值
+    const obj={
+        name:'zs',
+        age:10
+    }
+    obj.name='lisi';
+    console.log(obj);//引用类型里的值可以改，地址不能改
+    //如果不修改对象，Objct.freeze(obj)冻结
+    Object.freeze(obj);
+    obj.name='lisi';
+    console.log(obj);
+    </script>
+</body>
+</html>

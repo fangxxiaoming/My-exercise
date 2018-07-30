@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: "Helvetica", "Arial", serif;
+            color: #333;
+            background-color: #ccc;
+            margin: 1em 10%;
+        }
+        #img-box{
+            height: 60px;
+            width: 400px;
+        }
+        #img-box a{
+            float:left;
+            margin-right:20px;
+            height: 60px;
+            width: 80px;
+        }
+        #img-box a img{
+            width:100%;
+        }
+       .change{
+            width: 400px;
+            height: 250px;
+        }
+        .change img{
+            width: 100%;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<h1>美女画廊</h1>
+<a href="#" class="zhuce">注册</a>
+<div id="img-box">
+    <a href="img/1.jpg"title="美女A"><img src="img/1-small.jpg" alt=""></a>
+    <a href="img/2.jpg"title="美女B"><img src="img/2-small.jpg" alt=""></a>
+    <a href="img/3.jpg"title="美女C"><img src="img/3-small.jpg" alt=""></a>
+    <a href="img/4.jpg"title="美女D"><img src="img/4-small.jpg" alt=""></a>
+</div>
+<div class="change">
+    <img id="holder" src="img/placeholder.png" alt="" width="300px">
+</div>
+
+<p id="choose">请选择一个图片</p>
+<script>
+    var oimg=document.getElementById("img-box")
+    var aimg=oimg.getElementsByTagName("a");
+//    var aaimg=oimg.getElementsByTagName("images")
+    var aholder=document.getElementById("holder");
+    var achoose=document.getElementById("choose");
+    for(var i=0;i<aimg.length;i++){
+        aimg[i].onclick=function () {
+         aholder.src=this.href;
+         achoose.innerHTML=this.title;
+            return false
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background:rgba(31,31,31,0.55);
+        }
+        .side{
+            perspective: 800px;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d ;
+            animation: fun 4s  linear infinite forwards ;
+            -webkit-transform-origin: center center 150px;
+            margin:400px auto;
+            position:relative;
+        }
+        /*.container:hover{*/
+            /*transform: rotateY(360deg);*/
+        /*}*/
+        .container div{
+            width: 300px;
+            height: 300px;
+            position:absolute;
+            background:#f0f0f0;
+            font-size:80px;
+            color:#101010;
+            line-height:300px;
+            text-align:center;
+            border-radius:10px;
+            opacity: 0.7;
+            border:1px solid #0000;
+        }
+
+       .container .div1{
+           /*left:50%;*/
+           transform:translateX(300px) rotateY(-90deg);
+           -webkit-transform-origin:left;
+       }
+        .container .div2{
+            /*left:50%;*/
+            transform:translateX(-300px) rotateY( 90deg);
+            -webkit-transform-origin:right;
+        }
+        .container .div3{
+            /*left:50%;*/
+            transform:translateY(300px) rotateX(90deg);
+            -webkit-transform-origin:top;
+        }
+        .container .div4{
+            /*left:50%;*/
+            transform:translateY(-300px) rotateX(-90deg);
+            -webkit-transform-origin:bottom;
+        }
+        .container .div5{
+            /*left:50%;*/
+            transform:translateZ(300px) ;
+            z-index:2
+        }
+        .container .div6{
+            /*left:50%;*/
+            z-index:1;
+        }
+        @keyframes fun {
+            /*0%{*/
+                /*transform:rotateY(0deg)*/
+            /*}*/
+            /*25%{*/
+                /*transform:rotateY(90deg)*/
+            /*}*/
+            /*50%{*/
+                /*transform:rotateY(180deg)*/
+            /*}*/
+            /*75%{*/
+                /*transform:rotateY(270deg)*/
+            /*}*/
+            100%{
+                transform:rotateY(360deg)
+            }
+        }
+    </style>
+
+</head>
+<body>
+<div class="side">
+<div class="container">
+    <div class="div1">1</div>
+    <div class="div2">6</div>
+    <div class="div3">4</div>
+    <div class="div4">3</div>
+    <div class="div5">5</div>
+    <div class="div6">2</div>
+</div>
+</div>
+</body>
+</html>

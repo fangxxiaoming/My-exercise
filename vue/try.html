@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wraper{
+            margin:100px 300px;
+            width: 500px;
+        }
+    h2{
+        
+        width: 300px;
+        border-bottom:1px solid grey;
+        padding-left:50px;
+    }
+    #input{
+        width: 400px;
+        height: 30px;
+        margin-top:20px;
+        padding-top:20px;
+    }
+    .input{
+        background:#f2f2f2;
+    }
+    .input1{
+        background:#ff0000;
+    }
+    .name{
+        margin-right:300px;
+      
+    }
+    </style>
+</head>
+<body>
+    <div class="wraper">
+    <h2>todolist</h2>
+    <div id="app">
+       <div><span>名称：</span> <input type="text" class='add add1' v-model='mes1'></div>
+     <div style="margin-top:20px">价格： <input type="text" v-model='mes2' class='add add2'> <button @click="fun()">增加</button></div>
+       <div style="margin-top:20px;margin-left:55px"><input type="text" v-model='mes3' class='add'><button @click='hide()'>提交</button ></div>
+       <div id="input" v-for="val in obj" :class='{input:val.isS}'@click='change(val)'>
+        <input type="checkbox">
+        <span  class='name'>{{val.name}}</span>
+        <span  class='price'>{{val.price}}</span>
+       </div>
+    </div>
+    <button class='selected'>删除选中</button>
+</div>
+    <script src="vue.js"></script>
+    <script>
+      
+    let vm=new Vue({
+        el:"#app",
+        data:{
+            obj:[
+                {
+                    name:'衣服',
+                    price:'20',
+                    isS:false
+                },{
+                    name:'裤子',
+                    price:'10',
+                    isS:false
+                },{
+                    name:'鞋子',
+                    price:'50',
+                    isS:false
+                }
+            ],
+            mes1:'请输入产品名称',
+            mes2:'0',
+            mes3:'请输入关键字',
+            isA:true,
+            isB:false
+            
+        },
+        methods:{
+            change(sel){
+                sel.isS=!sel.isS
+            },
+            fun(){
+             
+            this.obj.push({name:this.mes1,price:this.mes2})
+            },
+            hide(){
+                var arr=[];             
+                    for(var i=0;i<this.obj.length;i++){
+                        for(val in this.obj[i]){
+                           if (this.obj[i][val]==this.mes3){
+                                arr.push(this.obj[i])
+                              
+                           }
+                        }
+                    }
+                       this.obj=arr;
+            }
+            
+        }
+    })
+    
+     
+    var oInput=document.querySelectorAll('.add');
+        var oCheck=document.querySelectorAll('input[type="checkbox"]:checked')
+        console.log(oCheck)
+        for(var i=0;i<oInput.length;i++){
+            oInput[i].index=i
+            oInput[i].onfocus=function(){
+          
+            'vm.mes'+(this.index+1)+'= ""';
+                console.log( 'vm.mes'+(this.index+1))
+    
+            }
+            
+        }
+        // for(var i=0;i<oCheck.length;i++){
+        //     if(oCheck[i]){}
+        // }
+        // var oSlect=document.querySelector('.select');
+        // oSelect.onclick=function(){
+
+        // }
+    </script>
+</body>
+</html>

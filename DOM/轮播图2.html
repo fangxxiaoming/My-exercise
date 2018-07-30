@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="">-->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            position: relative;
+            width: 750px;
+            height: 291px;
+            margin:50px auto;
+            overflow:hidden;
+        }
+        #img-box{
+            width: 3750px;
+            overflow:hidden;
+            position:absolute;
+            left:0;
+            top:0;
+            transition: left 1s linear;
+        }
+        #btn-box{
+            position:absolute;
+            right:5px;
+            bottom:5px;
+            width: 130px;
+            overflow: hidden;
+            height: 20px;
+        }
+        #img-box a{
+            float:left;
+        }
+        #btn-box li,#arrow-box span{
+            float:left;
+            list-style:none;
+            margin-right:5px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius:5px;
+            line-height:20px;
+            text-align:center;
+            color: #fff;
+            font-family:宋体;
+        }
+        #arrow-box {
+            position:absolute;
+            left:5px;
+            bottom:5px;
+            /*margin-left:10px;*/
+        }
+        #btn-box .selected{
+            background: orangered;
+        }
+        .show{
+            display:block;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="img-box">
+        <a href="" class="show"><img src="../CSS/img/1.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/2.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/3.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/4.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/5.jpg" alt=""></a>
+    </div>
+    <ul id="btn-box">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div id="arrow-box">
+        <span id="down">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+</div>
+<script>
+    var obtn=document.getElementById("btn-box");
+    var abtn=obtn.getElementsByTagName("li");
+    var oimg=document.getElementById("img-box");
+    var aImg=oimg.getElementsByTagName("a");
+    var onext=document.getElementById("arrow-box");
+    var anext=document.getElementById("next");
+    var adown=document.getElementById("down");
+    var ocontainer=document.getElementById("container")
+    obtn.innerHTML+=obtn.innerHTML
+    oimg.innerHTML+=oimg.innerHTML;
+    oimg.style.width=oimg.offsetWidth*2+"px";
+    var count=0;
+    var timer;
+    for(var i=0;i<abtn.length;i++) {
+        abtn[i].index = i;
+//        console.log(i)
+
+        (function (i) {
+            abtn [i].onclick = function () {
+                for (var j = 0; j < abtn.length; j++) {
+                    abtn[j].className = "";
+                    aImg[j].className = "";
+                }
+                   abtn[i].className = "selected";
+                console.log(i)
+            }
+        })(i)
+
+
+
+
+
+
+    }
+////            var index=this.index
+//           var left=-this.index*750;
+//            oimg.style.left=left+"px";
+//        }
+//    }
+//    anext.onclick=function () {
+//        count++;
+//        for(var i=0;i<abtn.length;i+
+    // +){
+//            abtn[i].className="";
+//        }
+//        abtn[count].className="selected";
+//        oimg.style.left=-count*750+"px";
+//
+//    }
+    <!--for(var i=0;i<abtn.length;i++){-->
+        <!--abtn[i].index=i;-->
+        <!--abtn[i].onclick=function(){-->
+            <!--change(this.index);-->
+            <!--count=this.index;-->
+        <!--}-->
+    <!--}-->
+    <!--anext.onclick=function () {-->
+        <!--count++;-->
+        <!--if(count==abtn.length/2+1){-->
+            <!--count=1;-->
+        <!--}-->
+        <!--change(count);-->
+    <!--}-->
+    <!--adown.onclick=function () {-->
+        <!--count&#45;&#45;-->
+        <!--if(count==-1){-->
+            <!--count=abtn.length-1;-->
+        <!--}-->
+        <!--change(count)-->
+    <!--}-->
+    <!--function change(idx){-->
+        <!--if(oimg.offsetLeft==-oimg.offsetWidth/2){-->
+
+            <!--oimg.style.transition = 'left 0s linear';-->
+            <!--oimg.style.left=0;-->
+        <!--}else{-->
+            <!--oimg.style.transition = 'left 1s linear';-->
+
+            <!--for(var j=0;j<abtn.length;j++){-->
+                <!--abtn[j].className="";-->
+            <!--}-->
+            <!--abtn[idx].className="selected";-->
+
+            <!--oimg.style.left=-idx*750+"px";-->
+        <!--}-->
+
+
+
+
+
+//       setTimeout(function(){
+
+//        },0);
+//        console.log(count);
+//
+//    }
+//    run()
+//    function run() {
+//        timer=setInterval(function () {
+//            anext.onclick()
+//        },2000)
+//    }
+//    ocontainer.onmouseover=function () {
+//    clearInterval(timer)
+//    }
+//    ocontainer.onmouseout=function () {
+//        run()
+//    }
+
+
+</script>
+</body>
+</html>

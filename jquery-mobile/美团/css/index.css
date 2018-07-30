@@ -1,0 +1,325 @@
+ *{
+     margin:0;
+     padding: 0;
+     font-weight: normal ;
+ }
+ body{
+     background-color: #f0efed;
+     font-weight: normal ;
+ }
+.ui-page .nav{
+    height: 1.01rem;
+    background:#06c1ae;
+    width: 100%;
+     border-bottom: 1px solid #21897d;
+     display: flex;
+}
+ .nav .ui-link{
+    display:inline-block;
+     line-height:1.01;
+    white-space: nowrap;
+     margin-right:0.3rem;
+}
+ .nav-left{
+     position: relative;
+     font-weight:normal;
+     font-family: simsun, sans-serif;
+ }
+.nav-left span{
+    display:inline-block;
+    height: 100%;
+    line-height: 1rem;
+    vertical-align: middle;
+    margin-left: .2rem;
+    margin-right: .2rem;
+    margin-bottom:0.1rem;
+    font-size:.25rem;
+    color: #ffffff;
+
+}
+.nav-left i{
+    position:absolute;
+    font-size:0.25rem;
+    right:-0.35rem;
+    top:0.45rem;
+    color: #fff;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.box-search{
+    flex:1;
+    border-radius: .06rem;
+    background: rgba(0,0,0,.15);
+    height: .64rem;
+    line-height: .64rem;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    margin-top: .2rem;
+    font-size: .2rem;
+}
+.box-search span{
+    display: block;
+    color: #68dbce;
+    font-size:0.22rem;
+    padding-left: .6rem;
+    margin-bottom:0.1rem;
+    font-weight:lighter;
+    font-family: Helvetica;;
+    font-style: none;
+}
+.box-search i{
+    position: absolute;
+    left: 0.1rem;
+    top: 0;
+    color: #ffffff;
+    display:inline-block;
+    font-size:0.32rem;
+    height: 0.5rem;
+    width: 0.5rem ;
+}
+.nav-right{
+    height: 100%;
+    line-height: 1rem;
+    text-align: center;
+    width: .94rem;
+    position: relative;
+}
+.nav-right span{
+    padding-top:0.1rem;
+    display: inline-block;
+    font-size: .2rem;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #ffffff;
+}
+.nav-right i{
+    position: absolute;
+    left: 0.2rem;
+    top: -0.12rem;
+    color: #ffffff;
+    display:inline-block;
+    font-size:0.32rem;
+    height: 0.5rem;
+    width: 0.5rem ;
+}
+.banner-download{
+    position: relative;
+  height: 100%;
+}
+.banner-download .imgbox{
+    width: 100%;
+    display: block;
+    position: relative;
+    object-fit: cover;
+}
+.list-container{
+    width: 100%;
+    height: 3rem;
+    overflow: hidden;
+    position: relative;
+}
+.listin{
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    float: left;
+    transition: 0.2s 0.5s ease;
+}
+.listin2{
+    left:100%;
+}
+.listin li{
+    list-style:none;
+    float:left;
+    width: 20% ;
+    box-sizing:border-box;
+    padding-left:0.2rem;
+    padding-top:0.2rem;
+}
+.icon{
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius:50%;
+    background: #fd9d21;
+    margin-bottom: .14rem;
+    text-align:center;
+ }
+
+.listin a{
+    text-decoration: none;
+    display: block;
+}
+.listin i{
+    display: block;
+    color: #ffffff;
+    font-size:0.5rem ;
+    
+}
+.listin a .text {
+    margin-left: -0.35rem;
+    display: block;
+    font-size: .2rem;
+    vertical-align: middle;
+    color: #666;
+    white-space: nowrap;
+    text-align:center;
+}
+.list-icon {
+    position: absolute;
+    bottom: -.12rem;
+    text-align: center;
+    /*width: 100%;*/
+    left:40%;
+}
+.list-icon li{
+    display: inline-block;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    background-color: #F0EFED;
+    margin: 0 .15rem;
+}
+.list-icon .active{
+    background-color: #06c1ae;
+}
+
+.daogou{
+    display: flex;
+    font-size:0.32rem;
+    background: #ffffff;
+    padding: 0.12rem;
+}
+.daogou li{
+    list-style: none;
+    flex: 1;
+}
+.daogou a{
+    height: 2.26rem;
+    text-align: center;
+    text-decoration: none;
+}
+.daogou .info strong{
+    display: block;
+    color: #55a40f;
+    font-size: .25rem;
+    margin-top: .12rem;
+    margin-bottom: .36rem;
+}
+.info{
+    vertical-align: top;
+    width: 1.7rem;
+    display: inline-block;
+    text-align:center;
+}
+.daogou small{
+    color: #666;
+    font-size: 0.2rem;
+
+}
+.daogou .daogou-img{
+    width: 1.24rem;
+    height: 1.24rem;
+    margin: auto;
+    display: block
+}
+.daogou-img img{
+    width: 100%;
+    padding-top:0.1rem;
+}
+.daogou-img:nth-child(1) img{
+    padding-top:0.2rem;
+}
+.guess-like{
+    border-top: 1px solid #DDD8CE;
+    border-bottom: 1px solid #DDD8CE;
+    margin-top: .2rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    min-height: 5rem;
+    position: relative;
+    padding-left:0.2rem;
+}
+.like{
+    font-size: .34rem;
+    padding-bottom: .1rem;
+    color: #333;
+    padding-top:.1rem;
+    border-bottom:.1px solid #DDD8CE;
+
+}
+.item{
+    margin: 0;
+    border-bottom: 1px solid #DDD8CE;
+    overflow: hidden;
+    font-size: inherit;
+    font-weight: 400;
+    position: relative;
+
+}
+.item-box{
+    display: flex;
+    font-size:0;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.item-img{
+    float:left;
+    width: 1.8rem;
+    height: 1.64rem;
+    padding-top: .1rem;
+    /*position: absolute;*/
+}
+.item-img img{
+    width: 100%;
+    height: 90%;
+}
+.item-text{
+    margin-left: 0.1rem;
+    position: relative;
+    height: 1.64rem;
+    float: left;
+    flex: 1;
+}
+.item-title{
+    padding-top: .1rem;
+    margin-bottom: .12rem;
+    font-size: .3rem;
+    font-weight: 400;
+    color: #333;
+}
+.item-block{
+    font-size: .24rem;
+    height: .68rem;
+    margin-bottom: .16rem;
+    color: #666;
+}
+.item-price{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.item-price .strong{
+    font-size: .38rem;
+    color: #06c1ae;
+}
+.item-price .strong-color{
+    font-size: .26rem;
+    color: #06c1ae;
+}
+.item del{
+    font-size:.24rem;
+    padding-left:0.1rem;
+    text-decoration: none;
+}
+.item del::before{
+    content:"门市价";
+}
+.item-price .line-right{
+    position: absolute;
+    right: 0.1rem;
+    top:0.2rem;
+    font-size:.24rem ;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>点击这个按钮，将获得时间的问候</p>
+<p id="demo"></p>
+<button onclick="myFunction()">点击这里</button>
+</body>
+<script>
+    function myFunction() {
+       var x;
+       var mydate= new Date().getHours();
+       if(mydate<10){
+           x="good day"
+       }
+       else{
+           x="bad day"
+       }
+        document.getElementById("demo").innerHTML=x;
+
+    }
+
+
+
+</script>
+</html>

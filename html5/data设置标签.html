@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div data-first-name="xx" class="box">div</div>
+<script>
+    var oDiv=document.querySelector('div');
+    console.log(oDiv.className);
+    oDiv.dataset.firstName='aaa';
+//    console.log(oDiv.dataset.firstName)
+    console.log(oDiv.dataset['firstName'])
+
+</script>
+</body>
+</html>

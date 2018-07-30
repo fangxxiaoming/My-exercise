@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .circle{
+            width: 160px;
+            height: 160px;
+            border-radius:50%;
+            position:absolute;
+        }
+
+        .div1{
+            border:10px solid blue;
+            left:0;
+            top:0;
+
+        }
+        .div1::after{
+            left:-10px;
+            top:-10px;
+            border:10px solid blue;
+            z-index:1;
+            border-bottom-color:transparent;
+        }
+        .circle::after{
+            content:'';
+            width: 160px;
+            height: 160px;
+            border-radius:50%;
+            position:absolute;
+        }
+        .div2{
+            left:190px;
+            border:10px solid black;
+        }
+        .div2::after{
+            left:-10px;
+            top:-10px;
+            border:10px solid black;
+            z-index:1;
+            border-left-color:transparent;
+        }
+        .div3{
+            left:380px;
+            border:10px solid red;
+        }
+        .div3::after{
+            left:-10px;
+            top:-10px;
+            border:10px solid red;
+            z-index:1;
+            border-left-color:transparent;
+        }
+        .div4{
+            left: 95px;
+            top: 85px;
+            border:10px solid yellow;
+        }
+        .div4::after{
+            left:-10px;
+            top:-10px;
+            border:10px solid yellow;
+
+        }
+        .div5{
+            left: 285px;
+            top:85px;
+            border:10px solid green;
+        }
+       .div5::after{
+           left:-10px;
+           top:-10px;
+            border:10px solid green;
+           z-index:1;
+           border-top-color:transparent;
+           border-right-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="div1 circle"></div>
+<div class="div2 circle"></div>
+<div class="div3 circle"></div>
+<div class="div4 circle"></div>
+<div class="div5 circle"></div>
+</body>
+</html>

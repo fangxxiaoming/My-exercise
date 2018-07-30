@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //1.	  编写一个函数 f(x) = 4x2+3x+2，使用户通过提示对话框瑜入x的值，能得到相应的计算结果。
+//    var x=prompt("请输入数字");
+////    var sum=0;
+//    function fn() {
+//
+//         x=4*x*x+3*x+2;
+//        return x
+//    }
+//    fn()
+//    console.log(x);
+
+//1.	编写一个函数Min(x,y)求出x,y这两个数中的最小值，要求x,y的值由用户通过提示对话框输入。
+//    var num1=prompt("请输入X的值");
+//    var num2=prompt("请输入Y的值");
+//    var b=Math.min(num1,num2);
+//    alert(b);
+//    3.	编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，
+    // 然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，并要求每行显示6个这样的数。
+
+
+//            var j=0;
+//                for(var i=1;i<=1000;i++){
+//                    if(i%3==0&&i%5==0&&i%7==0){
+//                        document.write(i+"&nbsp;");
+//                        j++;
+//                        if(j%6==0){
+//                            document.write("<br>");
+//                        }
+//                    }
+//            }
+//
+//
+
+
+//}
+//    7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，以后各项都是前两项的和。
+//    试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值。1,1,2,3,5,8
+//    第一种，用非递归方法
+//function fi(n){
+//    var num1=1;
+//    var num2=1;
+//    for(var i=3;i<=12;i++){
+//        var temp=num2;
+//        num2=num1+num2;
+//        num1=temp;
+//    }
+//    console.log(num2);
+//}
+//fi()
+//    第二种，用递归方法
+    function fib(n){
+        if(n<=2){
+            return 1
+        }
+        return fib(n-1)+fib(n-2)
+    }
+
+    console.log( fib(10))
+//    console.log(arguments.callee(n-1)+arguments.callee(n-2))
+//5.	编写一个非递归函数factorial(n)，计算12!-10!的结果。
+//    function fn(n) {
+//
+//
+//    var sum=1;
+//    for(var i=1 ;i<=n;i++){
+//        sum*=i;
+//    }
+////    console.log(sum);
+//        return sum;
+//    }
+//console.log(fn(12)-fn(10));
+//    console.log(fn(12));
+//    console.log(fn(10));
+
+
+//    9.	利用全局变量和函数，设计模拟幸运数字机游戏。设卒运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）的随机数，
+//    当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率。
+//    var x=prompt("请输入第一个数");
+//    var y=prompt("请输入第二个数");
+//    var z=prompt("请输入第三个数");
+//     var a=Math.floor(Math.random()*10);
+//     var b=Math.floor(Math.random()*10);
+//     var c=Math.floor(Math.random()*10);
+//
+//     if(a==8||b==8||c==8){
+//         alert("you win")
+//     }else{
+//         alert("you lost")
+//     }
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+//
+
+//    8.	编写函数，用下面的公式计算π的近似值。
+//
+//    在页面上输出当n=100，500，1000，10000时π的近似值。
+//    var result ,sum=0;
+//function ffloor(n) {
+//    for(var i=1;i<=12;i++){
+//        sum+=1/(2*i-1)*(Math.pow(-1,12));
+//    }
+//    console.log(sum);
+//    console.log(sum*4);
+//    return sum;
+//}
+//ffloor(12)
+
+
+</script>
+</body>
+</html>

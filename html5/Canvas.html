@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #canvas{
+            background:#f2f2f2;
+            /*margin:0 auto;*/
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="300px"; height="400px";></canvas>
+<script>
+    var ocv=document.getElementById('canvas');
+    var ctx=ocv.getContext('2d');
+    ctx.fillStyle='red';
+    ctx.fillRect(100,100,100,80);
+    ctx.fillText('hello world',10,10);
+    ctx.strokeStyle='blue';
+    ctx.strokeText('hello web',30,30);
+    ctx.moveTo(50,50);
+    ctx.lineTo(100,100);
+    ctx.lineTo(50,100);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.arc(200,200,100,0,Math.PI,true);
+    ctx.stroke();
+</script>
+</body>
+</html>

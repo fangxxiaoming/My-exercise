@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            name:'zs'
+        }
+        let name= Symbol();//定义使用let
+        let aa=Symbol();
+        obj[name]='xx';
+        console.log(obj);
+        //数组去重
+        let arr1=[1,2,3,3,4];
+        let arr2=new Set(arr1);
+        arr2.add(8);
+        arr2.delete(3);
+        //let result=[...arr2];
+        let result=Array.from(arr2);
+        function aa(a){
+            var obj={};
+            var result=[];
+            for(let i=0;i<a.length;i++){
+                var key=a[i];
+                if(!obj[key]){
+                    obj[key]=1;
+                    result.push(key);
+                }
+            }
+            return result
+        }
+        var a=new WeakSet();//成员只能是对象
+        a.add({name:'zs'})
+        </script>
+</body>
+</html>

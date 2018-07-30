@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            height: 30px;
+            width: 200px;
+            border:1px solid grey;
+        }
+        li{
+            list-style:none;
+            float:left;
+            width: 20px;
+            height: 20px;
+            border-radius:2px;
+            margin-left:10px;
+        }
+        .skin0{
+            background:#0000ff;
+        }
+        .skin1{
+            background:#ff0036;
+        }
+        .skin2{
+            background:#63a35c;
+        }
+        .skin3{
+            background:#0099cc;
+        }
+        .skin4{
+            background:#CC00FF;
+        }
+        .skin5{
+            background:#63a35c;
+        }
+        #div-side-0,#div-side-1{
+            width: 200px;
+            height: 200px;
+            background:#ffecec;
+            border:1px solid grey;
+            float:left;
+            margin-left:50px;
+            line-height:200px;
+            text-align:center;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+<body>
+<ul id="skin">
+    <li class="skin0"></li>
+    <li class="skin1"></li>
+    <li class="skin2"></li>
+    <li class="skin3"></li>
+    <li class="skin4"></li>
+    <li class="skin5"></li>
+</ul>
+<div id="div-side-0">
+<div id="game">
+    <h1 class="title">我要变色</h1>
+</div>
+</div>
+
+<div id="div-side-1">
+    <div id="games">
+        <h1 class="title">我也要变色</h1>
+    </div>
+</div>
+<script src="jquery-1.12..js"></script>
+<script>
+    $('ul>li').click(function () {
+        var aid=$(this).attr('class');
+//        var bid=$(this).attr('class','');
+//     var ali=$(aid).css('background');
+//        $('h1').css('background',ali);
+
+        $('#game').removeAttr('class').addClass(aid);
+
+//        $('#game').removeClass(bid);
+
+
+
+    })
+</script>
+</body>
+</html>

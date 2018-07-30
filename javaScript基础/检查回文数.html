@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!--解法一-->
+    function isPalindrome(str) {
+        for(var i=0;i<str.length/2;i++){
+            if(str[i]!==str[str.length-1-i]){
+            return false
+            }
+            return true
+        }
+    }
+//解法二
+    function isPalindrome(str){
+        return str===str.split('').reverse().join('');
+    }
+</script>
+</body>
+</html>

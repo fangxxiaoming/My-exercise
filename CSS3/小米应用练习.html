@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background: #F7F7F7;
+        }
+        .items{
+            width: 1250px;
+            height: 320px;
+            margin:80px auto;
+            /*transform-style:preserve-3d;*/
+            perspective: 100px;
+        }
+       .item{
+           width: 230px;
+           height: 300px;
+           margin-right: 20px;
+           background-color: #FFF;
+           float: left;
+           position: relative;
+           top: 0;
+           overflow: hidden;
+            transition: all 0.5s 0.5s;
+       }
+        .desc{
+            position:absolute;
+            background:#0099cc;
+            bottom:-100px;
+            width: 230px;
+            height: 100px;
+            transition: all 0.5s;
+
+        }
+        .item:hover .desc{
+            bottom: 0
+        }
+        .item:hover{
+            top:-5px;
+            box-shadow: 0 0 15px #AAA;
+            -webkit-transform: translateZ(10px);
+        }
+    </style>
+</head>
+<body>
+<div class="items">
+    <div class="item">
+        <div class="pic">
+            <img src="img/mi1.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="item">
+        <div class="pic">
+            <img src="img/mi2.jpg" alt="">
+        </div>
+        <div class="desc"></div>
+    </div>
+    <div class="item">
+    <div class="pic">
+        <img src="img/mi3.jpg" alt="">
+    </div>
+    <div class="desc"></div>
+</div>
+<div class="item">
+<div class="pic">
+    <img src="img/mi4.jpg" alt="">
+</div>
+<div class="desc"></div>
+</div>
+   <div class="item">
+    <div class="pic">
+        <img src="img/mi5.jpg" alt="">
+    </div>
+    <div class="desc"></div>
+</div>
+</div>
+</body>
+</html>

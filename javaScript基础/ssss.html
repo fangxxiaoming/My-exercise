@@ -1,0 +1,251 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//    var sum=0;
+//var win=0;
+//    function play() {
+//        var result="";
+//        var x=Math.floor(Math.random()*9+1);
+//        var y=Math.floor(Math.random()*9+1);
+//        var z=Math.floor(Math.random()*9+1);
+//        result=result+x+y+z+"\n";
+//        if(x==8||y==8||z==8){
+//            result+="you win"+"\n";
+//            win++;
+//        }else{
+//            result+="you lost"+"\n";
+//        }
+//        sum++;
+//        result+=win/sum*100+"%";
+//        return result;
+//    }
+//    var str;
+//    do{
+//        str=play();
+//    }while(confirm(str)); var win=0;
+//    var num = 0;
+//var win = 0;
+//function play(){
+//    num++;
+//    var result = "";
+//    var x = Math.floor(Math.random()*9)+1;
+//    var y = Math.floor(Math.random()*9)+1;
+//    var z = Math.floor(Math.random()*9)+1;
+//    result = result + x + y +z+"\n";
+//    if(x == 8 || y == 8 || z == 8){
+//        result +="赢\n";
+//        win++;
+//    }else{
+//        result +="输\n";
+//    }
+//    return result += win/num*100+"%";
+//}
+//var str;
+//do{
+//    str = play();
+//}while(confirm(str));
+//    7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，以后各项都是前两项的和。
+    // 试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值。
+//    function fib(n){
+//        if(n<=2){
+//            return 1;
+//        }
+//        return fib(n-1)+fib(n-2);
+//    }
+//var a=prompt("请输入数字",0);
+//    function star(a) {
+//        for(var j=1;j<=a;j++){
+//            for(var k=1;k<=5-j;k++){
+//                document.write("&nbsp;")
+//            }
+//            for(var i=1;i<=j;i++){
+//                document.write("☆");
+//            }
+//            document.write("<br>")
+//        }
+//    }
+//star(a);
+//
+
+
+//function sum(n) {
+//    var result=1;
+//    for(var i=1;i<=n;i++){
+//        result*=i;
+//    }
+//   return result;
+//
+//}
+//console.log(sum(12)-sum(10));
+//4.	在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数
+
+//    function isprime(n){
+//
+//
+//       for(var i=2;i<n;i++){
+//           if(n%i==0){
+//               return false;
+//           }
+//       }
+//       return true
+//    }
+//var count=0;
+//    for(var j=100;j<=1000;j++){
+//
+//        if(isprime(j)){
+//            document.write(j+",")
+//            count++;
+//            if(count%6==0){
+//                document.write("<br>");
+//        }
+//
+//
+//        }
+//
+//
+//    }
+//判断天数第一种
+//var date=new Date();
+//var year=date.getFullYear();
+//    function isRn() {
+//        if(year%4==0&&year%100!=0||year%400==0){
+//            return true;
+//        }
+//        return false;
+//    }
+//    function getday(year,month,day){
+//        var arr=[31,28,31,30,31,30,31,31,30,31,30,31];
+//        for(var i=0;i<=month-1;i++){
+//            day+=arr[i];
+//        }
+//        if(month>2&&isRn()){
+//            day+=1;
+//        }
+//        return day;
+//
+//
+//    }
+//    console.log(getday(2008,10,30));
+//    console.log(getday(2018,4,16));
+//    第二种
+//function getday(year,month,day) {
+//    var arr=[31,28,31,30,31,30,31,31,30,31,30,31];
+//    var days=0;
+//    if(year%4==0&&year%100!=0||year%400==0){
+//        arr[1]=29
+//    }
+//    for(var i=0;i<month-1;i++){
+//        days+=arr[i]+day;
+//    }
+//    return days
+//
+//}
+//console.log(getday(2018,4,18));
+//    测试数组
+var arr1 = ["a","b","c"];
+var arr2 = [1,2,3];
+var arr3 = arr1.concat(arr2);
+//console.log(arr1);
+//console.log(arr2);
+//console.log(arr3);
+var arr4 = arr3.splice(0,3,"关羽","关羽","关羽");
+var arr4 = arr3.slice(3,-1);
+console.log(arr3);
+console.log(arr4);
+console.log(arr3.indexOf("b"));
+var arr = [7,6,15,4,13,2,1];
+//for(var i=0;i<arr.length-1;i++) {
+//    for (var j = 0; j < arr.length - 1; j++) {
+//        if (arr[j] - arr[j + 1] > 0) {
+//            var temp = arr[j];
+//            arr[j + 1] = temp;
+//        }
+//    }
+//}
+//console.log(arr);
+//
+//var result="";
+//function fn(str) {
+//    for(var i=0;i<=str.length;i++){
+//        if(str.charAt(i)>0&&str.charAt(i)<9){
+//            result+=str.charAt(i)
+//        }
+//
+//    }
+//
+//    return result
+//}
+//console.log(fn("lj1s2d3s4dd"));
+//strr="12313dssdfsd"
+//console.log(strr.charAt(5));
+//    function fn(s1,s2) {
+//        var result="";
+//        var maxlength=Math.max(s1.length,s2.length);
+//        for(var i=0;i<maxlength;i++){
+//            if(i<s1.length){
+//                result+=s1.charAt(i);
+//            }
+//            if(i<s2.length){
+//                result+=s2.charAt(i);
+//            }
+//        }
+//        return result
+//    }
+//    console.log(fn("123aaa","aaa123"));
+//var sum=0;
+//var arr=[]
+//function fn() {
+//    for(var i=1;i<8;i++){
+//        var a=prompt("请输入成绩",0);
+//        a=Number(a);
+//        sum+=a;
+//        arr.push(a)
+//        if(!a){
+//            break;
+//        }
+//    }
+//    return sum;
+//}
+//fn();
+//document.write("总分"+sum+"<br>"+"平均分"+sum/7);
+//console.log(arr)
+
+
+//    function merge(s1,s2){
+//        var result="";
+//        var maxlength =Math.max(s1.length,s2.length) ;
+//      for(var i=0;i<maxlength;i++){
+//          if(i<s1.length)  {
+//              result+=s1.charAt(i)
+//          }
+//          if(i<s2.length){
+//              result+=s2.charAt(i)
+//          }
+//      }
+//      return result
+//    }
+//console.log(merge("ddfdfds","123dfds"));
+//    function CollectDigits(s){
+//        var str="";
+//
+//        for(i=0;i<s.length;i++){
+//            if(s.charAt(i)>0&&s.charAt(i)<9){
+//                str+=s.charAt(i);
+//            }
+//
+//        }
+//        return str
+//
+//    }
+//    console.log( CollectDigits("a1df2g124"))
+//
+</script>
+</body>
+</html>

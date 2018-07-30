@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // class Person{
+    //     constructor(name,age){
+    //         this.name=name;
+    //         this.age=age;
+    //     }
+    //     say(){
+    //         console.log('say')
+    //     }
+    // }
+    // // var person1=new Person('zs',20);
+    // class Coder extends Person{
+    //     constructor(name,age,x){
+    //         super(name,age);
+    //         this.XX=x;
+    //     }
+    // }
+    // var coder1=new Coder('zs',20,'111');
+    // console.log(coder1)
+    class Person{
+        constructor(name,age){
+                this.name=name;
+                this.age=age;
+        }
+        say(){
+            console.log('say')
+        }
+    }
+    class coder extends Person{
+        constructor(name,age,xx){
+            super(name,age)//相当于Person.prototype.constructor.call(this)。
+            this.XX=xx;
+        }
+       
+    }
+    var coder1=new coder('zs',20,10)
+    console.log(coder1)
+    coder1.say()
+</script>
+</body>
+</html>

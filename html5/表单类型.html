@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>    <style>
+        form{
+            max-width: 640px;
+            /* 最小宽度*/
+            min-width: 320px;
+            margin:0 auto;
+        }
+        input{
+            display: block;
+            width: 100%;
+            height:30px;
+            margin:10px 0;
+        }
+
+    </style>
+
+</head>
+<body>
+<form action="">
+    <fieldset>
+        <legend>表单属性</legend>
+        <label for="">
+            email: <input type="email" name="email" id="" required/>
+        </label>
+
+        <label for="">
+            url: <input type="url" name="url" />
+        </label>
+        <label for="">
+            Number:<input type="number" step="3" min="3" max="9"></label>
+        <label for="">
+            tel: <input type="tel">
+        </label>
+        <label for="">
+            search: <input type="search" name="search" />
+        </label>
+        <label for="">
+            range: <input type="range" max="300" min="100">
+        </label>
+        <label for="">
+            color: <input type="color">
+        </label>
+        <label for="">
+            time: <input type="time">
+        </label>
+        <label for="">
+            date: <input type="date">
+        </label>
+        <label for="">
+            <input type="submit" value="提交">
+        </label>
+    </fieldset>
+</form>
+</body>
+</html>

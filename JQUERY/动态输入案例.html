@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap {
+            width: 1000px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        .word {
+            font-weight: 700;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink .7s infinite;
+            -moz-animation: blink .7s infinite;
+            animation: blink .7s infinite;
+            display: none;
+        }
+
+        .saySection {
+            margin-top: 50px;
+        }
+
+        .saySection input {
+            font-size: 30px;
+        }
+
+        .saySection .txtSay {
+            padding-left: 10px;
+        }
+
+        .saySection .btnSay {
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>
+        You want to say ： <span class="word"></span><span class="typed-cursor">|</span> ！
+    </h1>
+
+    <div class="saySection">
+        <input type="text" id="inValue" class="txtSay"/>
+        <input type="button" value="Say" id="btnSay" class="btnSay"/>
+    </div>
+</div>
+<script src="jquery-1.12..js"></script>
+<script>
+    var str="红鲤鱼与绿鲤鱼与驴";
+    var arr=str.split('');
+    var num=0;
+    var str2 = "";
+    var timer = null;
+    $('.typed-cursor').show();
+    timer=setInterval(function () {
+      if(arr[num]==undefined){
+          clearInterval(timer);
+          $('.typed-cursor').hide();
+      }
+      else{
+          str2+=arr[num];
+          $('.word').text(str2);
+          num++
+      }
+  },500)
+    $('#btnSay').on('click',function () {
+        str=$('#inValue').val();
+        arr=str.split('');
+        num=0;
+        str2 = "";
+        timer=setInterval(function () {
+            if(arr[num]==undefined){
+                clearInterval(timer);
+                $('.typed-cursor').hide();
+            }
+            else{
+                str2+=arr[num];
+                $('.word').text(str2);
+                num++
+            }
+        },500)
+    })
+</script>
+</body>
+</html>

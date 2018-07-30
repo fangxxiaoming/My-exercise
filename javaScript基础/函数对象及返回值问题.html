@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var cat=new Object();
+    cat.name="songsong";
+    cat.age=2;
+     cat.eat=function eat() {
+         console.log("我正在吃");
+         return;
+     }
+//     cat.eat();
+//    没有返回值，不能调用，打印成undefined
+    console.log(cat.eat());
+////     var arr=new Array();
+////     arr[0]=1;
+    var person1 = {
+        name:"zs",
+        age:14
+    };
+    person1.name="ls";
+   var person2= person1;
+    console.log(person2);
+//    var arr1=[0,1,2,3]
+//    var arr2=arr1;
+//    arr1[0]=3;
+//    console.log(arr2);
+</script>
+</body>
+</html>

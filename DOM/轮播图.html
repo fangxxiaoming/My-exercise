@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="">-->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            position: relative;
+            width: 750px;
+            height: 291px;
+            margin:50px auto;
+            overflow:hidden;
+        }
+        #img-box{
+            width: 3750px;
+            overflow:hidden;
+        }
+        #btn-box{
+            position:absolute;
+            right:5px;
+            bottom:5px;
+        }
+        #btn-box a{
+            float:left;
+        }
+        #btn-box li,#arrow-box span{
+            float:left;
+            list-style:none;
+            margin-right:5px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius:5px;
+            line-height:20px;
+            text-align:center;
+            color: #fff;
+            font-family:宋体;
+            cursor: ;
+        }
+        #arrow-box {
+            position:absolute;
+            left:5px;
+            bottom:5px;
+            /*margin-left:10px;*/
+        }
+        #btn-box .selected{
+            background: orangered;
+        }
+        .show{
+            display:block;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="img-box">
+        <a href="" class="show"><img src="../CSS/img/1.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/2.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/3.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/4.jpg" alt=""></a>
+        <a href=""><img src="../CSS/img/5.jpg" alt=""></a>
+    </div>
+    <ul id="btn-box">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div id="arrow-box">
+        <span id="down">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+</div>
+<script>
+    var obtn=document.getElementById("btn-box");
+    var abtn=obtn.getElementsByTagName("li");
+    var oimg=document.getElementById("img-box");
+    var aImg=oimg.getElementsByTagName("a");
+    var anext=document.getElementById("next");
+    var adown=document.getElementById("down");
+    var ocontainer=document.getElementById("container");
+    var count=0;
+    for(var i=0;i<abtn.length;i++) {
+        abtn[i].index = i;
+        abtn[i].onclick = function () {
+            change(this.index)
+        }
+    }
+    anext.onclick=function () {
+        count++;
+        if(count==abtn.length){
+            count=0;
+        }
+       change(count)
+    }
+        adown.onclick=function () {
+            count--;
+            if(count==-1){
+                count=abtn.length-1;
+            }
+            change(count)
+        }
+    function change(idx) {
+        for(var j=0;j<abtn.length;j++){
+
+            abtn[j].className="";
+            aImg[j].className="hidden";
+        }
+        abtn[idx].className="selected";
+//        var index=this.index;
+        aImg[idx].className="show"
+
+    }
+    run()
+    function run() {
+        timer=setInterval(function () {
+            anext.onclick()
+        },2000)
+    }
+    ocontainer.onmouseover=function () {
+        clearInterval(timer);
+    }
+    ocontainer.onmouseout=function () {
+        run()
+    }
+</script>
+</body>
+</html>

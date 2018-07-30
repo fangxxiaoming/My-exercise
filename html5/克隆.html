@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var person1={
+        name:'zhangsan',
+        age:18,
+        father:{
+        name:'zz'
+        }
+    };
+//    function clone(obj) {
+//        var result={};
+//        for(key in obj){
+//            if(obj[key]instanceof Object){
+//                result[key]=clone(obj[key]);
+//            }
+//            result[key]=obj[key]
+//        }
+//        return result
+//    }
+//    var person2=clone(person1);
+//    console.log(person2);
+//    person1.father.name='xx';
+    var str=JSON.stringify(person1);
+    var person2=JSON.parse(str);
+    console.log(person2);
+</script>
+</body>
+</html>

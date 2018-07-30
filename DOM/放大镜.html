@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        #small-img{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.4);
+            position: absolute;
+            left:0;
+            top:0;
+            display: none;
+        }
+        #big-img{
+            float:left;
+            width: 400px;
+            height: 400px;
+            display: none;
+            position: relative;
+            overflow:hidden;
+        }
+        #big-img img{
+            /*width:100%;*/
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="small-img">
+    <img src="img/big1.jpg" alt="">
+    <div id="drag"></div>
+</div>
+<div id="big-img"><img src="img/big2.jpg" alt=""id="img-box"></div>
+<script>
+   var smallBox=document.getElementById('small-img');
+   var aImg=smallBox.getElementsByTagName('img')[0];
+   var aDrag=document.getElementById('drag');
+   var bigBox=document.getElementById('big-img');
+   var bigImg=bigBox.getElementsByTagName('img')[0];
+   aImg.onmouseover=function () {
+       aDrag.style.display='block';
+       bigBox.style.display='block';
+   };
+   aImg.onmousemove=function (e) {
+       e=e||window.event;
+       var sLeft=e.clientX-aDrag.offsetWidth/2;
+       var sTop=e.clientY-aDrag.offsetHeight/2;
+       if(sLeft<=0){
+           sLeft=0;
+       }
+
+       if(sTop<=0){
+           sTop=0;
+       }
+       var dragMaxX=aImg.offsetWidth-aDrag.offsetWidth;
+       var dragMaxY=aImg.offsetHeight-aDrag.offsetHeight;
+       if(sLeft>=dragMaxX){
+           sLeft=dragMaxX;
+       }
+       if(sTop>=dragMaxY){
+           sTop=dragMaxY
+       }
+       aDrag.style.left=sLeft+"px";
+       aDrag.style.top=sTop+"px";
+       var bMaxX=bigImg.offsetWidth - bigBox.offsetWidth;
+       var bMaxY=bigImg.offsetHeight - bigBox.offsetHeight;
+       var Xscale=sLeft/dragMaxX;
+       var Yscale=sTop/dragMaxY;
+       var bLeft=Xscale*bMaxX;
+       var bTop=Yscale*bMaxY;
+       bigImg.style.left=-bLeft+"px";
+       bigImg.style.top=-bTop+"px";
+
+   };
+   aImg.onmouseout=function () {
+       aDrag.style.display='none';
+       bigBox.style.display='none';
+   }
+
+</script>
+</body>
+</html>
